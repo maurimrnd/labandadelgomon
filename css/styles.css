@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');  
+*{
+   margin: 0; 
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+   list-style: none;
+   text-decoration: none;
+   scroll-behavior: smooth;
+   scroll-padding-top: 3rem;
+}
+
+:root{
+    --main-color: #019DCE;
+    --text-color: #fff;
+    --other-color: #212121;
+    --second-color: #05143B;
+    --bg-color: #111;
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index:100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 30px 14%;
+    transition: all 0.5 ease;
+}
+a{
+    color: var(--text-color);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700;
+}
+.logo i{
+    vertical-align: middle;
+    margin-right: 8px;
+    color:var(--main-color)
+}
+.navlist{
+    display: flex;
+    transition: all 0.5s ease;
+}
+.navlist a{
+    color:var(--text-color);
+    font-family: var(--p-font);
+    font-weight: 600;
+    margin: 0 30px;
+    transition: all 0.5s ease;
+}
+.navlist a.active{
+    color: var(--main-color);
+}
+.nav-icons{
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: var(--main-color);
+    border-radius: 3rem;
+    box-shadow:var(--main-color) 0px 1px 25px;
+}
+.nav-icons i{
+    vertical-align: middle;
+    font-size: 25px;
+    color: var(--bg-color);
+    margin-right: 8px;
+    margin-left: 5px;
+    transition: all 0.5s ease;
+}
+#menu-icon{
+    font-size: 32px;
+    color: var(--bg-color);
+    z-index: 100001;
+    cursor: pointer;
+    display: none;
+}
+.nav-icons i:hover{
+    transform: scale(1.1);
+    color: var(--text-color);
+}
+.navlist :hover{
+    color: #FFD400;
+}
+/* HOME INICIO */
+section{
+    padding: 70px 14% 60px;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+.home-img img{
+    width: 100%;
+    height: auto;
+}
+.home-text h1{
+    font-size: var(--big-font);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+
+header.sticky {
+    padding: 12px 14%;
+    background-color: var(--other-color);
+}
+
+.rec h1{
+    display: grid;
+    padding: 10px 0px;
+    text-align: center;
+    color: var(--text-color);
+    background-color: var(--other-color);
+    margin: 20px 0px 20px 0px;
+    border-radius: 3rem;
+}
+
+.rec img{
+    display:flex;
+    max-width: 800px;
+    margin:auto;
+}
+/*SCROLL*/
+.scroll i{
+font-size: 22px;
+color: var(--text-color);
+background:var(--main-color);
+padding: 10px;
+border-radius: 2rem;
+}
+/*MEDIA*/
+@media (max-width: 1545px){
+
+    header{
+        padding: 22px 4%;
+        transition: .2s;   
+    }
+    header.sticky {
+        padding: 14px 4%;
+        transition: .2s;
+    }
+    section{
+        padding: 50px 4%;
+        transition: .2s;
+    }
+}
+@media (max-width: 1000px){
+    :root{
+        --big-font: 4rem;
+        --h2-font: 2.2rem;
+        --p-font: 15px;
+    }
+    .home{
+        height: 85vh;
+
+    }
+}
+@media (max-width: 1000px){
+    #menu-icon {
+        display: initial;
+    }
+    .home-img{
+        width: 200%;
+    }
+    .navlist{
+        position: absolute;
+        top: -1000px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        background: var(--other-color);
+        transition: all 0.5s ease;
+    }
+    .navlist a{
+        display: block;
+        padding: 0.5rem;
+        margin: 1rem;
+        border-left: 2px solid var(--main-color);
+    }
+    .navlist.open{
+        top: 100%;
+    }
+}
+@media (max-width: 1045px) {
+    :root{
+        --big-font:3.3rem;
+        --h2-font:2rem;
+    }
+    .home-img img{
+        width: 100%;
+        max-width:490px;
+        height: auto;
+    }
+}
